@@ -1,26 +1,26 @@
-import About from "../pages/AboutPage/AboutPage";
-import Contacts from "../pages/Contacts/Contacts";
+import AboutPage from "../pages/AboutPage/AboutPage";
+import ContactsPage from "../pages/ContactsPage/ContactsPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import Index from "../pages/Index/Index";
-import Partners from "../pages/Partners/Partners";
+import IndexPage from "../pages/IndexPage/IndexPage";
+import PartnersPage from "../pages/PartnersPage/PartnersPage";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Index />,
+    element: <IndexPage />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/about",
-    element: <About />,
+    element: <AboutPage />,
   },
   {
     path: "/contacts",
-    element: <Contacts />,
+    element: <ContactsPage />,
   },
   {
     path: "/partners",
-    element: <Partners />,
+    element: <PartnersPage />,
   },
 ]);

@@ -1,8 +1,12 @@
 import React from "react";
-// import VkIcon from "../../assets/Icon/vk.svg";
+import VkIcon from "../../assets/icon/vk/VkIcon";
 
 const Footer = () => {
-  return <footer>footer</footer>;
+  return (
+    <footer style={{ backgroundColor: "black" }}>
+      <VkIcon />
+    </footer>
+  );
 };
 
 export default React.memo(Footer);
