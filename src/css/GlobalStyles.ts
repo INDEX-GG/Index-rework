@@ -2,47 +2,20 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   @import url("./fonts.css");
-  
-  html {
-    height: 100%;
-  }
 
   body {
-    height: 100%;
-    min-height: 100vh;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
+    height: 100vh;
     font-family: "Montserrat", sans-serif;
   }
-
-  header {
-    position: fixed;
-    top: 0;
+  
+  #root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
-  footer {
-    position: fixed;
-    bottom: 0;
-  }
-
-  button {
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  main {
+    flex-grow: 1;
   }
 
   *,
@@ -51,6 +24,22 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  button {
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul,
+  li {
+    list-style: none;
   }
 
   input,

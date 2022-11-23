@@ -1,7 +1,7 @@
 import React from "react";
 
-const About = () => {
+const AboutPage = () => {
   return <div>about</div>;
 };
 
-export default React.memo(About);
+export default AboutPage;

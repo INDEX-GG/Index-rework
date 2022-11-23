@@ -1,18 +1,18 @@
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import { GlobalStyles } from "./styles/GlobalStyles";
-import Theme from "./theme/Theme";
+import { GlobalStyles } from "./css/GlobalStyles";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/router";
+import { themeObj } from "theme/themeObj";
+import { ThemeProvider } from "styled-components";
+import MainLayout from "layout/MainLayout";
 
 function App() {
   return (
-    <Theme>
-      <Header />
-      <RouterProvider router={router} />
-      <Footer />
+    <ThemeProvider theme={themeObj}>
+      <MainLayout>
+        <RouterProvider router={router} />
+      </MainLayout>
       <GlobalStyles />
-    </Theme>
+    </ThemeProvider>
   );
 }
 
