@@ -6,6 +6,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     height: 100vh;
     font-family: "Montserrat", sans-serif;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.blackTwo};
   }
   
   #root {
