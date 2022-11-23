@@ -1,6 +1,7 @@
+import React from "react";
 import { useRouteError } from "react-router-dom";
 
-export default function ErrorPage() {
+const ErrorPage = () => {
   const error: any = useRouteError();
   console.error(error);
 
@@ -13,4 +14,6 @@ export default function ErrorPage() {
       </p>
     </div>
   );
-}
+};
+
+export default React.memo(ErrorPage);

@@ -1,7 +1,7 @@
 import React from "react";
 
-const Partners = () => {
+const PartnersPage = () => {
   return <div>partners</div>;
 };
 
-export default React.memo(Partners);
+export default React.memo(PartnersPage);

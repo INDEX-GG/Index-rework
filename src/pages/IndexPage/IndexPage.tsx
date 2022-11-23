@@ -1,7 +1,7 @@
 import React from "react";
 
-const Index = () => {
+const IndexPage = () => {
   return <>Index</>;
 };
 
-export default React.memo(Index);
+export default React.memo(IndexPage);

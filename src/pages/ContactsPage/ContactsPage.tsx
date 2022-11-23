@@ -1,7 +1,7 @@
 import React from "react";
 
-const Contacts = () => {
+const ContactsPage = () => {
   return <div>contacts</div>;
 };
 
-export default React.memo(Contacts);
+export default React.memo(ContactsPage);
