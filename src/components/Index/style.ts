@@ -16,10 +16,7 @@ const IndexWrapperSC = styled("ul")`
 const IndexBlockLoaderSC = styled("li")`
   height: 222px;
   width: 222px;
-  border: 2px solid;
-  border-radius: 50%;
   margin-right: 50px;
-  border-color: ${({ theme }) => theme.colors.white};
 `;
 
 const IndexBlockTextSC = styled("li")`
