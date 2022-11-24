@@ -12,6 +12,10 @@ export const GlobalStyles = createGlobalStyle`
   
   #root {
     height: 100%;
+  }
+
+  #scrollContainer {
+    height: 100%;
     display: flex;
     flex-direction: column;
   }

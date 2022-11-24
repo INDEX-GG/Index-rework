@@ -9,9 +9,7 @@ import "normalize.css";
 function App() {
   return (
     <ThemeProvider theme={themeObj}>
-      <MainLayout>
-        <RouterProvider router={router} />
-      </MainLayout>
+      <RouterProvider router={router} />
       <GlobalStyles />
     </ThemeProvider>
   );
