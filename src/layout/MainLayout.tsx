@@ -5,15 +5,15 @@ import { useMainLayout } from "./useMainLayout";
 
 interface IMainLayoutProps {
   children: ReactNode;
-  // headerTitle: string;
+  headerTitle: string;
 }
 
-const MainLayout = ({ children }: IMainLayoutProps) => {
+const MainLayout = ({ children, headerTitle }: IMainLayoutProps) => {
   const { handleWhell } = useMainLayout();
 
   return (
     <div id="scrollContainer" onWheel={handleWhell}>
-      <Header />
+      <Header headerTitle={headerTitle} />
       <main>{children}</main>
       <Footer />
     </div>

@@ -9,8 +9,8 @@ export const useMainLayout = () => {
   const currentIndexPage = pathArr.indexOf(pathname);
 
   const handleWhell = (e: WheelEvent<HTMLDivElement>) => {
-    const scorllValue = e.deltaY;
-    if (scorllValue > 0) {
+    const scrollValue = e.deltaY;
+    if (scrollValue > 0) {
       const nextPath = pathArr[currentIndexPage + 1];
       if (nextPath) {
         navigate(nextPath);
