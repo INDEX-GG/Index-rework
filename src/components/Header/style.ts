@@ -17,16 +17,6 @@ const NavBlockMainSC = styled("li")`
   font-size: 64px;
   line-height: 78px;
   position: relative;
-
-  &::before {
-    width: 146px;
-    content: "";
-    height: 2px;
-    position: absolute;
-    top: 50%;
-    left: -174px;
-    background: ${({ theme }) => theme.colors.white};
-  }
 `;
 
 export const useHeaderStyles = () => ({
