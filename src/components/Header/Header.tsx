@@ -1,12 +1,16 @@
 import React from "react";
 import { useHeaderStyles } from "./style";
 
-const Header = () => {
+interface IHeaderProps {
+  headerTitle: string;
+}
+
+const Header = ({ headerTitle }: IHeaderProps) => {
   return (
     <HeaderContainerSC>
       <NavContainerSC>
         <NavWrapperSC>
-          <NavBlockMainSC>ГЛАВНАЯ</NavBlockMainSC>
+          <NavBlockMainSC>{headerTitle}</NavBlockMainSC>
         </NavWrapperSC>
       </NavContainerSC>
     </HeaderContainerSC>
