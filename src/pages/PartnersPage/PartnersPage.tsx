@@ -3,7 +3,7 @@ import React from "react";
 
 const PartnersPage = () => {
   return (
-    <MainLayout headerTitle="ПАРТНЁРЫ">
+    <MainLayout>
       <div>partners</div>
     </MainLayout>
   );

@@ -5,6 +5,8 @@ import IndexPage from "pages/IndexPage/IndexPage";
 import PartnersPage from "pages/PartnersPage/PartnersPage";
 import { RouteObject } from "react-router-dom";
 
+export const pageNameRU = ["Главная", "О нас", "Контакты", "Партнеры"];
+
 export const mainRoutes: RouteObject[] = [
   {
     path: "/",

@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <MainLayout headerTitle="О НАС">
+    <MainLayout>
       <div>about</div>
     </MainLayout>
   );
