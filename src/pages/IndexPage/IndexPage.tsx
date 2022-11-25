@@ -4,7 +4,7 @@ import React from "react";
 
 const IndexPage = () => {
   return (
-    <MainLayout headerTitle="ГЛАВНАЯ">
+    <MainLayout>
       <Index />
     </MainLayout>
   );
