@@ -7,16 +7,7 @@ const Index = () => {
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
-    const progressInterval = setInterval(() => {
-      setProgress((prevState) => {
-        if (prevState >= 100) {
-          clearInterval(progressInterval);
-          return 100;
-        }
-        return prevState + 1;
-      });
-    }, 5);
-    return () => clearInterval(progressInterval);
+    setProgress(100);
   }, []);
 
   return (
@@ -27,6 +18,7 @@ const Index = () => {
             value={progress}
             strokeWidth={1}
             styles={buildStyles({
+              pathTransition: "stroke-dashoffset 2s ease 0s",
               pathColor: "white",
               trailColor: "grey",
             })}
