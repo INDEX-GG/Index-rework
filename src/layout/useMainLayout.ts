@@ -20,17 +20,19 @@ export const useMainLayout = () => {
   });
 
   const handlePush = (route: string, indexPage: number) => {
-    setChangePage({ isLoading: true, page: indexPage });
-
     //todo: переделать очищение setTimeout
     //Очищаем сеттаймауты, чтобы коректно перейти на последнюю страницу (не проходя все)
     for (let i = 1; i < 1000; i++) {
       clearTimeout(i);
     }
 
+    setChangePage({
+      isLoading: true,
+      page: indexPage,
+    });
+
     setTimeout(() => {
       navigate(route);
-
       setChangePage((prevState) => ({
         ...prevState,
         isLoading: false,
