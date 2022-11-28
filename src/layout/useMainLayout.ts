@@ -19,8 +19,9 @@ export const useMainLayout = () => {
     page: currentIndexPage,
   });
 
-  const handlePush = (route: string, indexPage: number) => {
-    setChangePage({ isLoading: true, page: indexPage });
+  const handlePush = (nextIndexPage: number) => {
+    console.log(nextIndexPage);
+    setChangePage({ isLoading: true, page: nextIndexPage });
 
     //todo: переделать очищение setTimeout
     //Очищаем сеттаймауты, чтобы коректно перейти на последнюю страницу (не проходя все)
@@ -29,8 +30,7 @@ export const useMainLayout = () => {
     }
 
     setTimeout(() => {
-      navigate(route);
-
+      navigate(pathArr[nextIndexPage]);
       setChangePage((prevState) => ({
         ...prevState,
         isLoading: false,
@@ -40,14 +40,13 @@ export const useMainLayout = () => {
 
   const handleChangePage = (newPageIndex: number) => {
     if (
-      currentIndexPage + newPageIndex >= 0 &&
-      currentIndexPage + newPageIndex <= pathArr.length - 1
+      currentIndexPage + newPageIndex < pathArr.length &&
+      currentIndexPage + newPageIndex >= 0
     ) {
       setCurrentIndexPage((prevState) => prevState + newPageIndex);
+      const nextIndexPage = currentIndexPage + newPageIndex;
+      handlePush(nextIndexPage);
     }
-
-    const path = pathArr[currentIndexPage];
-    handlePush(path, currentIndexPage);
   };
 
   const handleWhell = (e: WheelEvent<HTMLDivElement>) => {
