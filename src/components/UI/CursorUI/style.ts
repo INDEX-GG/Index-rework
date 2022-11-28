@@ -1,5 +1,4 @@
 import CursorIcon from "assets/icon/cursor/CursorIcon";
-import { MutableRefObject } from "react";
 import styled from "styled-components";
 
 const CursorSC = styled.div`

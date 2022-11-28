@@ -20,7 +20,6 @@ export const useMainLayout = () => {
   });
 
   const handlePush = (nextIndexPage: number) => {
-    console.log(nextIndexPage);
     setChangePage({ isLoading: true, page: nextIndexPage });
 
     //todo: переделать очищение setTimeout
@@ -28,6 +27,11 @@ export const useMainLayout = () => {
     for (let i = 1; i < 1000; i++) {
       clearTimeout(i);
     }
+
+    setChangePage({
+      isLoading: true,
+      page: nextIndexPage,
+    });
 
     setTimeout(() => {
       navigate(pathArr[nextIndexPage]);

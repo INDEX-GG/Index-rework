@@ -1,57 +1,29 @@
-import React, { MutableRefObject, MouseEvent, useState } from "react";
+import React from "react";
 import { useCursorStyles } from "./style";
-import { useEffect, useRef } from "react";
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import { useCursorUI } from "./useCursorUI";
 
-type StyleStateType = {
-  opacity: number;
-  left: string;
-  top: string;
+type CursorUIPropsType = {
+  isLoadingNav: boolean;
 };
 
-const CursorUI = () => {
-  const [style, setStyle] = useState<StyleStateType>({
-    opacity: 0,
-    left: "0px",
-    top: "0px",
-  });
-  const cursorRef = useRef<HTMLDivElement>(null);
-
-  const onMouseMove = (e: any) => {
-    const circle = cursorRef.current;
-    if (circle) {
-      const coordinatesX = e.pageX - 24 + "px";
-      const coordinatesY = e.pageY - 24 + "px";
-
-      sessionStorage.setItem("@mouseX", coordinatesX);
-      sessionStorage.setItem("@mouseY", coordinatesY);
-
-      setStyle(() => ({
-        opacity: 1,
-        left: coordinatesX,
-        top: coordinatesY,
-      }));
-    }
-  };
-
-  useEffect(() => {
-    const mountedY = sessionStorage.getItem("@mouseY");
-    const mountedX = sessionStorage.getItem("@mouseX");
-
-    if (mountedX && mountedY) {
-      setStyle({
-        opacity: 1,
-        top: mountedY,
-        left: mountedX,
-      });
-    }
-
-    document.addEventListener("mousemove", onMouseMove);
-    return () => removeEventListener("mousemove", onMouseMove);
-  }, []);
-
+const CursorUI: React.FC<CursorUIPropsType> = ({ isLoadingNav }) => {
+  const { cursorRef, progress, moveMouseStyle, pathTransition } =
+    useCursorUI(isLoadingNav);
   return (
-    <CursorSC ref={cursorRef} style={style}>
+    <CursorSC ref={cursorRef} style={moveMouseStyle}>
       <CursorIconSC />
+      <div style={{ position: "absolute", top: "0" }}>
+        <CircularProgressbar
+          value={progress}
+          strokeWidth={2}
+          styles={buildStyles({
+            pathColor: "white",
+            trailColor: "grey",
+            pathTransition: pathTransition,
+          })}
+        />
+      </div>
     </CursorSC>
   );
 };
