@@ -35,7 +35,7 @@ export const useMainLayout = () => {
         ...prevState,
         isLoading: false,
       }));
-    }, 3000);
+    }, 2000);
   };
 
   const handleChangePage = (newPageIndex: number) => {

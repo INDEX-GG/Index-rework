@@ -8,6 +8,8 @@ export const GlobalStyles = createGlobalStyle`
     font-family: "Montserrat", sans-serif;
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.blackTwo};
+    cursor: none;
+    overflow: hidden;
   }
   
   #root {
