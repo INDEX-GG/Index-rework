@@ -1,44 +1,83 @@
 import React from "react";
-import { useFormBlockStyles } from "./styles";
+import FormElem from "./FormElem/FormElem";
+import { useFormBlockStyles } from "./style";
+import { useFormBlock } from "./useFormBlock";
 
 const FormBlock = () => {
+  const {
+    name,
+    email,
+    message,
+    form,
+    submitHandler,
+    nameHandler,
+    emailHandler,
+    messageHandler,
+    blurHandler,
+  } = useFormBlock();
+
   return (
-    <FormBlockContainerSC
-      onSubmit={(e) => {
-        e.preventDefault();
-        console.log("отправка");
-      }}>
-      <FormTitleSC>Напишите нам</FormTitleSC>
+    <FormBlockContainerSC onSubmit={submitHandler()}>
+      <FormTitleSC>
+        {(form.result && "Сообщение отправлено") ||
+          (form.error && "Ошибка") ||
+          "Напишите нам"}
+      </FormTitleSC>
       <FormSubTextSC>
-        Есть идея? Расскажите о своем проекте, укажите контакты, и мы свяжемся с
-        Вами, чтобы все обсудить.
+        {(form.result && "Мы скоро с Вами свяжемся!") ||
+          (form.error && `${form.error}`) ||
+          "Есть идея? Расскажите о своём проекте, укажите контакты, и мы свяжемся с вами, чтобы всё обсудить"}
       </FormSubTextSC>
-      <FormListSC>
-        <FormElemSC>
-          <FormInputSC placeholder="Ваше имя"></FormInputSC>
-        </FormElemSC>
-        <FormElemSC>
-          <FormInputSC placeholder="Почта"></FormInputSC>
-        </FormElemSC>
-        <FormElemSC>
-          <FormInputSC placeholder="Сообщение"></FormInputSC>
-        </FormElemSC>
-      </FormListSC>
-      <FormPolicyTextSC>
-        Нажимая кнопку ниже, я соглашаюсь с Политикой конфиденциальности
-      </FormPolicyTextSC>
-      <FormButtonTextSC>Связаться с нами</FormButtonTextSC>
+      <FormHideBlockSC style={{ ...form.hideStyle }}>
+        <FormListSC>
+          <FormElem
+            id="userName"
+            name="name"
+            maxLength={50}
+            type="text"
+            placeholder="Ваше имя"
+            state={name}
+            onBlur={blurHandler()}
+            onChange={nameHandler()}
+          />
+          <FormElem
+            id="userEmail"
+            name="email"
+            maxLength={20}
+            type="email"
+            placeholder="Почта"
+            state={email}
+            onBlur={blurHandler()}
+            onChange={emailHandler()}
+          />
+          <FormElem
+            id="userMessage"
+            name="message"
+            maxLength={200}
+            type="text"
+            placeholder="Сообщение"
+            state={message}
+            onBlur={blurHandler()}
+            onChange={messageHandler()}
+          />
+        </FormListSC>
+        <FormPolicyTextSC>
+          Нажимая кнопку ниже, я соглашаюсь с Политикой конфиденциальности
+        </FormPolicyTextSC>
+        <FormButtonTextSC disabled={!form.isValid}>
+          Связаться с нами
+        </FormButtonTextSC>
+      </FormHideBlockSC>
     </FormBlockContainerSC>
   );
 };
 
 const {
   FormBlockContainerSC,
+  FormHideBlockSC,
   FormTitleSC,
   FormSubTextSC,
   FormListSC,
-  FormElemSC,
-  FormInputSC,
   FormPolicyTextSC,
   FormButtonTextSC,
 } = useFormBlockStyles();
