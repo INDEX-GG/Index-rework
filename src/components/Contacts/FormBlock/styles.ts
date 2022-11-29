@@ -32,6 +32,8 @@ const FormElemSC = styled("li")`
 `;
 
 const FormInputSC = styled("input")`
+  color: white;
+  text-indent: 20px;
   width: 100%;
   border: none;
   background-color: transparent;
@@ -42,6 +44,12 @@ const FormInputSC = styled("input")`
     font-size: 16px;
     line-height: 20px;
     text-indent: 20px;
+  }
+  &:hover {
+    cursor: none;
+  }
+  &:focus {
+    outline: none;
   }
 `;
 
@@ -60,6 +68,8 @@ const FormButtonTextSC = styled("button")`
   display: block;
   margin-left: auto;
   margin-right: auto;
+
+  cursor: none;
 `;
 
 export const useFormBlockStyles = () => ({
