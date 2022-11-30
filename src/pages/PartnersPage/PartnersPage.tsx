@@ -1,10 +1,11 @@
+import Partners from "components/Partners/Partners";
 import MainLayout from "layout/MainLayout";
 import React from "react";
 
 const PartnersPage = () => {
   return (
     <MainLayout>
-      <div>partners</div>
+      <Partners />
     </MainLayout>
   );
 };
