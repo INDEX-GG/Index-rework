@@ -31,6 +31,9 @@ const FormInputSC = styled("input")`
   }
   &:hover {
     cursor: none;
+    &::placeholder {
+      color: transparent;
+    }
   }
   &:focus {
     outline: none;
