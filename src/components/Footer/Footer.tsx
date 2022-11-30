@@ -4,6 +4,7 @@ import { useFooterStyles } from "./style";
 import WorkspaceIcon from "assets/icon/workspace/WorkspaceIcon";
 import BehanceIcon from "assets/icon/behance/BehanceIcon";
 import TelegramIcon from "assets/icon/telegram/TelegramIcon";
+import VcIcon from "assets/icon/vc/VcIcon";
 
 const Footer = () => {
   return (
@@ -11,6 +12,7 @@ const Footer = () => {
       <FooterWrapperSC>
         <FooterBlockTextSC>Introduction Digital Experience</FooterBlockTextSC>
         <FooterBlockIconsSC>
+          <VcIcon />
           <BehanceIcon />
           <TelegramIcon />
           <WorkspaceIcon />
