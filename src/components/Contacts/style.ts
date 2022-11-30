@@ -22,7 +22,7 @@ const FormBlockContainerSC = styled("form")`
 `;
 
 const ContactsBlockContainerSC = styled("form")`
-  max-width: 390px;
+  max-width: 397px;
   text-align: right;
 `;
 

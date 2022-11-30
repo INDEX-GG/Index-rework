@@ -10,12 +10,12 @@ const ContactsList = () => {
   return (
     <ContactsListSC>
       <ContactElem
-        text={"8 (919) 123-23-95, 8 (351) 223-23-95"}
+        text={"+7 (919) 123-23-95, +7 (919) 123-23-92"}
         Icon={PhoneIcon}
       />
-      <ContactElem text={"guru-grupp.mail.ru"} Icon={MailIcon} />
+      <ContactElem text={"info@index-studio.ru"} Icon={MailIcon} />
       <ContactElem
-        text={`Молодогвардейцев 60в, офис 505${"\n"} Челябинск, Россия, 454021`}
+        text={`Молодогвардейцев 60в, офис 505${"\n"} Челябинск, Россия, 454136`}
         Icon={GeoIcon}
       />
       <ContactElem text={"Наши вакансии"} Icon={VacanciesIcon} />
