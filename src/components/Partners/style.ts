@@ -1,4 +1,5 @@
 import styled from "styled-components";
+//ok
 
 const PartnersContainerSC = styled("div")`
   height: 100%;
