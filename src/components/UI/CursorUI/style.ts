@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const CursorSC = styled.div`
   position: absolute;
+  z-index: 10;
   pointer-events: none;
 `;
 
