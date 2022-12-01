@@ -10,11 +10,11 @@ import { RouteObject } from "react-router-dom";
 
 export const pageNameRU = [
   "Главная",
-  "Вакансии",
-  "О нас",
   "Контакты",
+  "Вакансии",
   "Партнеры",
   "Кейсы",
+  "О нас",
   "Отзывы",
 ];
 
@@ -25,16 +25,12 @@ export const mainRoutes: RouteObject[] = [
     errorElement: <ErrorPage />,
   },
   {
-    path: "/vacancies",
-    element: <VacanciesPage />,
-  },
-  {
-    path: "/about",
-    element: <AboutPage />,
-  },
-  {
     path: "/contacts",
     element: <ContactsPage />,
+  },
+  {
+    path: "/vacancies",
+    element: <VacanciesPage />,
   },
   {
     path: "/partners",
@@ -43,6 +39,10 @@ export const mainRoutes: RouteObject[] = [
   {
     path: "/cases",
     element: <CasesPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
   },
   {
     path: "/reviews",
