@@ -1,4 +1,5 @@
 import AboutPage from "pages/AboutPage/AboutPage";
+import CasesPage from "pages/CasesPage/CasesPage";
 import ContactsPage from "pages/ContactsPage/ContactsPage";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
 import IndexPage from "pages/IndexPage/IndexPage";
@@ -12,6 +13,7 @@ export const pageNameRU = [
   "О нас",
   "Контакты",
   "Партнеры",
+  "Кейсы",
 ];
 
 export const mainRoutes: RouteObject[] = [
@@ -35,5 +37,9 @@ export const mainRoutes: RouteObject[] = [
   {
     path: "/partners",
     element: <PartnersPage />,
+  },
+  {
+    path: "/cases",
+    element: <CasesPage />,
   },
 ];
