@@ -10,6 +10,10 @@ const NavContainerSC = styled("nav")``;
 
 const NavWrapperSC = styled("ul")`
   display: flex;
+
+  :hover li + li {
+    display: block;
+  }
 `;
 
 const NavBlockMainSC = styled("li")`
@@ -17,6 +21,27 @@ const NavBlockMainSC = styled("li")`
   font-size: 64px;
   line-height: 78px;
   position: relative;
+
+  margin-right: 28px;
+`;
+
+const NavBlockAltSC = styled("li")`
+  position: relative;
+  display: none;
+`;
+
+const NavBlockAltListSC = styled("ul")`
+  position: absolute;
+  top: 50%;
+  margin-top: -0.2em;
+  display: flex;
+  white-space: nowrap;
+`;
+
+const NavBlockAltElemSC = styled("li")`
+  &:not(:last-child) {
+    margin-right: 52px;
+  }
 `;
 
 export const useHeaderStyles = () => ({
@@ -24,4 +49,7 @@ export const useHeaderStyles = () => ({
   NavContainerSC,
   NavWrapperSC,
   NavBlockMainSC,
+  NavBlockAltSC,
+  NavBlockAltListSC,
+  NavBlockAltElemSC,
 });
