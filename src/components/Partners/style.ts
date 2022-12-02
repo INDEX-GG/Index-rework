@@ -26,7 +26,7 @@ const PartnersElemSC = styled("li")`
   align-items: stretch;
 `;
 
-const PartnersTextSC = styled("li")`
+const PartnersTextSC = styled("p")`
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
