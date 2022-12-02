@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer>
       <FooterWrapperSC>
-        <FooterBlockTextSC>Introduction Digital Experience</FooterBlockTextSC>
+        <FooterBlockTextSC>Integration of Digital Experience</FooterBlockTextSC>
         <FooterBlockIconsSC>
           <a
             href="https://vc.ru/u/1268124-index/entries"
