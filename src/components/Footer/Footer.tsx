@@ -12,11 +12,30 @@ const Footer = () => {
       <FooterWrapperSC>
         <FooterBlockTextSC>Introduction Digital Experience</FooterBlockTextSC>
         <FooterBlockIconsSC>
-          <VcIcon />
-          <BehanceIcon />
-          <TelegramIcon />
-          <WorkspaceIcon />
-          <VkIcon />
+          <a
+            href="https://vc.ru/u/1268124-index/entries"
+            target="_blank"
+            rel="noreferrer">
+            <VcIcon />
+          </a>
+          <a
+            href="https://www.behance.net/INDEX-STUDIO"
+            target="_blank"
+            rel="noreferrer">
+            <BehanceIcon />
+          </a>
+          <a href="https://t.me/INDEX_RU" target="_blank" rel="noreferrer">
+            <TelegramIcon />
+          </a>
+          <a
+            href="https://workspace.ru/contractors/digital-studiya-index/"
+            target="_blank"
+            rel="noreferrer">
+            <WorkspaceIcon />
+          </a>
+          <a href="https://vk.com/index_ds" target="_blank" rel="noreferrer">
+            <VkIcon />
+          </a>
         </FooterBlockIconsSC>
       </FooterWrapperSC>
     </footer>
