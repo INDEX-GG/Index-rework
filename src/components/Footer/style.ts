@@ -16,7 +16,7 @@ const FooterBlockTextSC = styled("div")`
 
 const FooterBlockIconsSC = styled("div")`
   height: 26px;
-  & > svg:not(:last-child) {
+  & > a:not(:last-child) {
     margin-right: 28px;
   }
 `;
