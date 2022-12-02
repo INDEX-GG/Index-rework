@@ -1,41 +1,35 @@
 import { useState, WheelEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { mainRoutes } from "routes/mainRoutes";
-
-type ChangePageStatType = {
-  isLoading: boolean;
-  page: number;
-};
+import { StatePageType } from "./types";
 
 export const useMainLayout = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation() || { pathname: "/" };
   const pathArr: string[] = mainRoutes.map((item) => item.path || "");
-  const [currentIndexPage, setCurrentIndexPage] = useState<number>(
-    pathArr.indexOf(pathname),
-  );
-  const [isChangePage, setChangePage] = useState<ChangePageStatType>({
+  const [statePage, setStatePage] = useState<StatePageType>({
     isLoading: false,
-    page: currentIndexPage,
+    page: pathArr.indexOf(pathname),
   });
 
   const handlePush = (nextIndexPage: number) => {
-    setChangePage({ isLoading: true, page: nextIndexPage });
-
+    setStatePage((prevState) => ({
+      ...prevState,
+      isLoading: true,
+      page: nextIndexPage,
+    }));
     //todo: переделать очищение setTimeout
     //Очищаем сеттаймауты, чтобы коректно перейти на последнюю страницу (не проходя все)
     for (let i = 1; i < 1000; i++) {
       clearTimeout(i);
     }
-
-    setChangePage({
+    setStatePage({
       isLoading: true,
       page: nextIndexPage,
     });
-
     setTimeout(() => {
       navigate(pathArr[nextIndexPage]);
-      setChangePage((prevState) => ({
+      setStatePage((prevState) => ({
         ...prevState,
         isLoading: false,
       }));
@@ -44,11 +38,14 @@ export const useMainLayout = () => {
 
   const handleChangePage = (newPageIndex: number) => {
     if (
-      currentIndexPage + newPageIndex < pathArr.length &&
-      currentIndexPage + newPageIndex >= 0
+      statePage.page + newPageIndex < pathArr.length &&
+      statePage.page + newPageIndex >= 0
     ) {
-      setCurrentIndexPage((prevState) => prevState + newPageIndex);
-      const nextIndexPage = currentIndexPage + newPageIndex;
+      setStatePage((prevState) => ({
+        ...prevState,
+        page: prevState.page + newPageIndex,
+      }));
+      const nextIndexPage = statePage.page + newPageIndex;
       handlePush(nextIndexPage);
     }
   };
@@ -62,7 +59,8 @@ export const useMainLayout = () => {
     }
   };
   return {
-    isChangePage,
+    statePage,
+    setStatePage,
     handleWhell,
   };
 };

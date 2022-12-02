@@ -1,21 +1,18 @@
 import Footer from "components/Footer/Footer";
 import Header from "components/Header/Header";
-import React, { ReactNode } from "react";
+import React from "react";
 import { useMainLayout } from "./useMainLayout";
 import CursorUI from "components/UI/CursorUI/CursorUI";
-
-interface IMainLayoutProps {
-  children: ReactNode;
-}
+import { IMainLayoutProps } from "./types";
 
 const MainLayout = ({ children }: IMainLayoutProps) => {
-  const { handleWhell, isChangePage } = useMainLayout();
+  const { handleWhell, statePage, setStatePage } = useMainLayout();
 
   return (
     <div id="scrollContainer" onWheel={handleWhell}>
-      <Header titleId={isChangePage.page} />
-      {isChangePage.isLoading && <div>loading</div>}
-      <CursorUI isLoadingNav={isChangePage.isLoading} />
+      <Header statePage={statePage} setStatePage={setStatePage} />
+      {statePage.isLoading && <div>loading</div>}
+      <CursorUI isLoadingNav={statePage.isLoading} />
       <main>{children}</main>
       <Footer />
     </div>

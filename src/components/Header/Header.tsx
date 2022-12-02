@@ -1,36 +1,29 @@
 import React from "react";
-import { pageNameRU } from "routes/mainRoutes";
 import { useHeaderStyles } from "./style";
+import { IHeaderProps } from "./types";
+import { useHeader } from "./useHeader";
 
-interface IHeaderProps {
-  titleId: number;
-}
-
-const Header = ({ titleId }: IHeaderProps) => {
-  const headerTitle = pageNameRU[titleId];
-
-  const sliderPathArr = (index: number, arr: string[]) => {
-    const sliderArr: string[] = [];
-    for (let i = index + 1; i < arr.length; i++) {
-      sliderArr.push(arr[i].toUpperCase());
-    }
-    for (let i = index - 1; i >= 0; i--) {
-      sliderArr.push(arr[i].toUpperCase());
-    }
-    return sliderArr;
-  };
-
-  const sliderNavAlt = sliderPathArr(titleId, pageNameRU);
+const Header = ({ statePage, setStatePage }: IHeaderProps) => {
+  const { headerTitle, handlerAltNav, sliderNavAlt } = useHeader(
+    statePage,
+    setStatePage,
+  );
 
   return (
     <HeaderContainerSC>
       <NavContainerSC>
         <NavWrapperSC>
-          <NavBlockMainSC>{headerTitle}</NavBlockMainSC>
+          <NavBlockMainSC>
+            <a onClick={() => handlerAltNav(statePage.page)}>{headerTitle}</a>
+          </NavBlockMainSC>
           <NavBlockAltSC>
             <NavBlockAltListSC>
-              {sliderNavAlt.map((e, index) => {
-                return <NavBlockAltElemSC key={index}>{e}</NavBlockAltElemSC>;
+              {sliderNavAlt.map((elem, index) => {
+                return (
+                  <NavBlockAltElemSC key={index}>
+                    <a onClick={() => handlerAltNav(elem.id)}>{elem.pathRu}</a>
+                  </NavBlockAltElemSC>
+                );
               })}
             </NavBlockAltListSC>
           </NavBlockAltSC>
