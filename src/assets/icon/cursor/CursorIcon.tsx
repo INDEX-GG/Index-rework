@@ -4,8 +4,8 @@ const CursorIcon = () => {
   return (
     <div>
       <svg
-        width="51"
-        height="50"
+        width="30"
+        height="30"
         viewBox="0 0 51 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
