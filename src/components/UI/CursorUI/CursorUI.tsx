@@ -13,7 +13,13 @@ const CursorUI: React.FC<CursorUIPropsType> = ({ isLoadingNav }) => {
   return (
     <CursorSC ref={cursorRef} style={moveMouseStyle}>
       <CursorIconSC />
-      <div style={{ position: "absolute", top: "0" }}>
+      <div
+        style={{
+          position: "absolute",
+          top: "-8px",
+          width: "46px",
+          left: "-8px",
+        }}>
         <CircularProgressbar
           value={progress}
           strokeWidth={2}
