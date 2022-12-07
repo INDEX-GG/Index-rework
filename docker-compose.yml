@@ -4,9 +4,9 @@ services:
     image: index_rework_front
     container_name: index_rework_front
     stdin_open: true
+    tty: True
     restart: always
     ports:
-      - 5913:3000
+      - "5913:3000"
     volumes:
-      - ./:/usr/src/app/index-rework
-      - /usr/src/app/index-rework/node_modules
+      - ./:/app
