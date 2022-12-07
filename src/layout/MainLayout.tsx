@@ -11,7 +11,6 @@ const MainLayout = ({ children }: IMainLayoutProps) => {
   return (
     <div id="scrollContainer" onWheel={handleWhell}>
       <Header statePage={statePage} setStatePage={setStatePage} />
-      {statePage.isLoading && <div>loading</div>}
       <CursorUI isLoadingNav={statePage.isLoading} />
       <main>{children}</main>
       <Footer />
