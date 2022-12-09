@@ -20,6 +20,7 @@
     "format": "prettier --write src/",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "build": "eslint src/ --ext .js,.jsx,.ts,.tsx & prettier --write src/ & react-scripts build",
+    "build-not-verify": "react-scripts build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
