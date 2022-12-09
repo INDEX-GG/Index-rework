@@ -1,12 +1,9 @@
 FROM node:18
 WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
+COPY package.json /app
+COPY package-lock.json /app
 RUN npm i
-COPY . .
-CMD ["npm", "run", "build"]
-
-FROM nginx
-EXPOSE 3000
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY . /app
+RUN npm run build
+RUN npm i -g serve
+CMD serve -s -n build
