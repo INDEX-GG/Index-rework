@@ -1,8 +1,8 @@
 {
   "name": "index-rework",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://testguru.ru/index-rework",
+  "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "dotenv": "^16.0.3",

@@ -1,13 +1,10 @@
 version: "3"
 services:
   app:
-    image: index_rework_front
-    container_name: index_rework_front
+    image: index_rework
+    container_name: index_rework
     stdin_open: true
     tty: true
     restart: always
     ports:
       - "5913:3000"
-    volumes:
-      - '.:/app'
-      - '/app/node_modules'
